@@ -4,13 +4,10 @@ import Echo from "laravel-echo"
 import Pusher from "pusher-js"
 import { axios } from "@/lib/axios"
 
-window.Pusher = Pusher
-
 const useEcho = () => {
   const [echoInstance, setEchoInstance] = useState(null)
 
   useEffect(() => {
-    // We are going to create the Echo instance here...
     const echo = new Echo({
       broadcaster: "reverb",
       key: process.env.NEXT_PUBLIC_REVERB_APP_KEY,
